@@ -1,0 +1,100 @@
+.banner-container {
+    display: flex;
+    margin-top: 0px auto;
+    height: 500px;
+    background-image: url("../../../../assets/images/banners/homepage-banner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.text-container {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    height: max-content;
+    padding: 40px 80px;
+    /* border: 1px solid red; */
+    align-self: center;
+}
+
+.text-container h1 {
+    font-weight: 700;
+    padding: 5px 0px;
+    font-size: xx-large;
+    color: #d12031;
+    
+}
+
+.text-container h3 {
+    font-weight: 600;
+    font-size: x-large;
+    padding: 5px 0px;
+
+}
+
+.link-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.link-buttons button {
+    background-color: #d12031;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    /* Added padding for better button appearance */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    /* Added transition for smooth animation */
+    margin: 5px;
+}
+
+.link-buttons button:hover {
+    background-color: #66676b;
+    color: white;
+    transform: scale(1.05);
+    /* Slightly enlarges the button on hover */
+}
+
+@media (max-width: 768px) {
+    .banner-container {
+        background-size: cover;
+        border-radius: 5px;
+        margin-top: -8px;
+        padding: 0px 10px;
+        /* border: 1px solid red; */
+        height: 300px
+    }
+    .text-container h1{
+        font-size: 1.5rem;
+    }
+    .text-container{
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 425px) {
+    .banner-container {
+        background-size: contain;
+        /* border: 1px solid red; */
+        height: 200px
+    }
+    .text-container{
+        width: 100%;
+        padding: 5px 0px;
+    }
+    .text-container h1{
+        font-size: 1rem;
+    }
+    .text-container h3{
+        font-size: 1rem;
+    }
+    .link-buttons button{
+        padding: 5px;
+        font-size: 10px;
+    }
+}
