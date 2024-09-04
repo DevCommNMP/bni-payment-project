@@ -213,35 +213,24 @@ const BNIPaymentForm = () => {
               value={formData.gstin}
               onChange={handleChange}
             />
-            <p style={{fontSize:"14px"}}>*Please fill null if you do't have GST Number</p>
           </div>
         </div>
  
       </form>
 <div className="summary-container">
           <div className="summary">
-            <h5 className='summary-heading'>Summary</h5>
-            <hr style={{borderBottom:"1px solid rgb(204, 204, 204)",marginTop:"-5px"}}/>
-            <div className='summary-content'>
-            <p><span style={{ fontWeight: "bold", fontSize:"14px"}}>Total Amount:</span> <span>₹1001</span></p>
-            <p><span style={{  fontWeight: "bold", fontSize:"14px"}}>Late Fee:</span> <span>₹0</span></p>
-            <p><span style={{  fontWeight: "bold", fontSize:"14px"}}>GST:</span> <span>₹50</span></p>
-            </div>
-            <div style={{display:"flex",justifyContent:"space-between"}}>
-              <div style={{display:"flex",flexDirection:"column",}} ><span className="total">Total Amount</span>
-              <span>(Including GST:)</span>
-              </div>
-            <p>  ₹1051</p>
-
-            </div>
+            <p>Total Amount: ₹1001</p>
+            <p>Late Fee: ₹0</p>
+            <p>GST: ₹50</p>
+            <p className="total">Total Amount (Including GST): ₹1051</p>
           </div>
-          <button  className="pay-now-button" onClick={handleSubmit}>PAY NOW</button>
+          <button type="submit" className="pay-now-button">PAY NOW</button>
         </div>
 </div>
       
 
       <div className="form-note">
-        <p><span style={{color:"red"}}>NOTE:</span> All the payment done on this page will directly go through the HDFC payment gateway.</p>
+        <p>NOTE: All the payment done on this page will directly go through the HDFC payment gateway.</p>
       </div>
 
       <div className="form-footer">
