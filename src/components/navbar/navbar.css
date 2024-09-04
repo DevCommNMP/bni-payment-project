@@ -1,0 +1,178 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    position: sticky; /* Make the navbar sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure the navbar is above other elements */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logoImg {
+    width: 300px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: #d32f2f;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+   color:#66676b
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+.side-menu-logo{
+    width: 200px;
+    align-self: center;
+    height: 70px;
+    cursor: pointer;
+}
+
+/* Side Menu Styles */
+.side-menu {
+    position: absolute;
+    top: -10px;
+    left: -300px; /* Initially hidden off-screen */
+    width: 282px;
+    height: 100vh;
+    background-color: #fff;
+    border-right: 1px solid #d6000054;
+    box-shadow:  2px 0 5px #f97f007a;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    transition: left 0.3s ease; /* Animation for opening and closing */
+}
+
+.side-menu.open {
+    left: 0px; /* Slide in */
+    text-align: center;
+ 
+}
+
+.side-menu.close {
+    left: -340px; /* Slide out */
+}
+
+.side-menu a {
+    color: #d12031;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.side-menu a:hover {
+    color:#66676b;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    width: 100%;
+    
+    text-align: center;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #d12031;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-content {
+    overflow: hidden; /* Hide the overflowing content during animation */
+    height: 0; /* Initial height for closed state */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: height 0.3s ease; /* Transition for height change */
+}
+
+.dropdown-content.open {
+    height: max-content; /* Adjust this value based on the number of links */
+}
+
+.dropdown-content a {
+    opacity: 0; /* Start with hidden links */
+    transform: translateY(-10px); /* Slightly move links upwards */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and position */
+}
+
+.dropdown-content.open a {
+    opacity: 1; /* Make links visible */
+    transform: translateY(0); /* Move links to original position */
+    /* Adjust margin for better spacing */
+}
+
+.dropdown-content a:hover {
+    background-color: #d12031;
+    color: white;
+    width: 100%;
+}
+/* Responsive Styles */@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+    }
+    .nav-links {
+        display: none;
+    }
+
+    .logoImg {
+        width: 200px;
+        height: 60px;
+    }
+    .side-menu {
+        width: 230px;
+    }
+    .side-menu.open {
+        align-items: center;
+        height:110vh;
+    }
+    .side-menu.open a {
+        padding: 5px 0px;
+        border-radius: 5px;
+        width: 100%;
+        font-size:12px ;
+        color: #66676b;
+        border: 1px solid #ccc;
+
+     
+    }
+    .side-menu.open a:hover {
+        background-color: #d12031;
+        color:white;
+        width: 100%;
+    }
+    .hamburger {
+        display: block;
+        color: #d12031;
+    }
+}
