@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/images/logo/logo.jpeg';
-import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa'; // Import FaChevronUp icon
+import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa'; // Import icons
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,19 +24,19 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="logo">
-                <img src={logo} alt="logo img" className="logoImg" />
+               <Link to="/"> <img src={logo} alt="logo img" className="logoImg" /></Link>
             </div>
             <div className="nav-links">
-                <a href="#member-application">Member Application Form</a>
-                <a href="#interview-sheet">Interview Sheet</a>
-                <a href="#commitment-sheet">Commitment Sheet</a>
-                <a href="#eoi-form">EOI Form</a>
+                <Link to="/member-application">Member Application Form</Link>
+                <Link to="/interview-sheet">Interview Sheet</Link>
+                <Link to="/commitment-sheet">Commitment Sheet</Link>
+                <Link to="/eoi-form">EOI Form</Link>
             </div>
             <div className="hamburger" onClick={toggleMenu}>
                 {isMenuOpen ? <FaTimes className="icon-animation" /> : <FaBars className="icon-animation" />}
             </div>
             <div className={`side-menu ${isMenuOpen ? 'open' : 'close'}`}>
-                <img src={logo} alt="logo img" className="side-menu-logo" style={{borderBottom:"1px solid #ccc"}}/>
+                <img src={logo} alt="logo img" className="side-menu-logo" style={{borderBottom:"1px solid #ccc"}} />
                 
                 {/* First Dropdown */}
                 <div className="dropdown">
@@ -43,10 +44,10 @@ const Navbar = () => {
                         Basic Services {isDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
                     </button>
                     <div className={`dropdown-content ${isDropdownOpen ? 'open' : ''}`}>
-                        <a href="#member-application" onClick={toggleMenu}>Member Application Form</a>
-                        <a href="#interview-sheet" onClick={toggleMenu}>Interview Sheet</a>
-                        <a href="#commitment-sheet" onClick={toggleMenu}>Commitment Sheet</a>
-                        <a href="#eoi-form" onClick={toggleMenu}>EOI Form</a>
+                        <Link to="/member-application" onClick={toggleMenu}>Member Application Form</Link>
+                        <Link to="/interview-sheet" onClick={toggleMenu}>Interview Sheet</Link>
+                        <Link to="/commitment-sheet" onClick={toggleMenu}>Commitment Sheet</Link>
+                        <Link to="/eoi-form" onClick={toggleMenu}>EOI Form</Link>
                     </div>
                 </div>
 
@@ -56,11 +57,11 @@ const Navbar = () => {
                         All Payments {isPaymentDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
                     </button>
                     <div className={`dropdown-content ${isPaymentDropdownOpen ? 'open' : ''}`}>
-                        <a href="#payment-link-1" onClick={toggleMenu}>New Member Payment</a>
-                        <a href="#payment-link-2" onClick={toggleMenu}>Renewal Payment</a>
-                        <a href="#payment-link-3" onClick={toggleMenu}>Renewal Payment With Late Fee </a>
-                        <a href="#payment-link-4" onClick={toggleMenu}>All Training Payments</a>
-                        <a href="#payment-link-4" onClick={toggleMenu}>Meeting Payment</a>
+                        <Link to="/new-member-payment" onClick={toggleMenu}>New Member Payment</Link>
+                        <Link to="/renewal-payment" onClick={toggleMenu}>Renewal Payment</Link>
+                        <Link to="/renewal-payment-with-late-fee" onClick={toggleMenu}>Renewal Payment With Late Fee</Link>
+                        <Link to="/all-training-payments" onClick={toggleMenu}>All Training Payments</Link>
+                        <Link to="/meeting-payments" onClick={toggleMenu}>Meeting Payment</Link>
                     </div>
                 </div>
             </div>

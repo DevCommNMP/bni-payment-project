@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import "./PaymentButton.css";
 
-const PaymentButtons = ({ titles }) => {
+const PaymentButtons = ({ titles, links }) => {
   return (
-    <div className='container'>
-      {titles && titles.map((title, index) => (
-        <button key={index} className='payment-btn'>{title}</button>
+    <div className='btn-container'>
+      {titles && links && titles.map((title, index) => (
+        <Link key={links[index]} to={`/${links[index]}`}>
+          <button className='payment-btn'>{title}</button>
+        </Link>
       ))}
     </div>
   );
