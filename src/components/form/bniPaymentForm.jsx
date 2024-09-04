@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './form.css';
+import border from "../../assets/images/form icons/border.png"
 
 const BNIPaymentForm = () => {
   const [formData, setFormData] = useState({
@@ -53,8 +54,9 @@ const BNIPaymentForm = () => {
     <div className="form-container">
       <div className="form-header">
         <h1>BNI NEW MEMBER PAYMENT</h1>
+        <img src={border} alt="" style={{width:"250px"}} />
       </div>
-<div style={{display:'flex',flexDirection:'row',justifyContent:"space-around"}}>
+<div className='box-container' >
 <form className="form-content" onSubmit={handleSubmit}>
         <div className="form-left">
           <div className="form-group">

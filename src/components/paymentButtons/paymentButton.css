@@ -15,8 +15,8 @@
     background-color: #d12031;
     color: white;
     border: none;
-    padding: 10px 20px; /* Added padding for better button appearance */
-    font-size: 16px;
+    padding: 10px 10px; /* Added padding for better button appearance */
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Added transition for smooth animation */
 }
