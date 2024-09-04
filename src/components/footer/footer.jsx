@@ -29,10 +29,10 @@ const Footer = () => {
           <p className="footer-company-name">BNI NEW Delhi © 2015</p>
         </div>
 
-        <div className="footer-center" style={{fontSize:"16px"}}>
+        <div className="footer-center" >
           <div>
             <i className="fa fa-map-marker" style={{backgroundColor:"white",color:"#d32f2f"}}></i>
-            <p><span style={{fontSize:"16px"}}>Sunil Kuzhuvelil,</span> <span>ADI Corporate Training,</span> <span>Flat no. 09, Pocket-1,</span><span>Sector-19, Dwarka,</span>New Delhi - 110075, India.</p>
+            <p><span >Sunil Kuzhuvelil,</span> <span>ADI Corporate Training,</span> <span>Flat no. 09, Pocket-1,</span><span>Sector-19, Dwarka,</span><span>New Delhi - 110075, India.</span></p>
           </div>
           <div>
             <i className="fa fa-phone" style={{backgroundColor:"white",color:"#d32f2f"}}></i>
@@ -45,8 +45,8 @@ const Footer = () => {
         </div>
 
         <div className="footer-right">
-          <p className="footer-company-about" style={{fontSize:"16px"}}>
-            <span style={{fontSize:"16px"}}>About the company</span>
+          <p className="footer-company-about" >
+            <span >About the company</span>
             BNI is the World’s Largest professional networking organization. Over the past 38 Years, BNI has grown to over 300K members worldwide, in more than 77 different countries, from over 300 different types of professions, all of whom have benefited from increased referral business as a result of BNI.          </p>
           <div className="footer-icons">
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
