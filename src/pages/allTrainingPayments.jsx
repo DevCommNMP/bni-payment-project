@@ -1,38 +1,27 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Navbar from '../components/navbar/navbar'
 import PaymentButtons from '../components/paymentButtons/paymentButtons'
 import Footer from '../components/footer/footer'
+import AllPaymentsForm from '../components/form/AllpaymentsForm'
+import Copyright from '../components/footer/copyright'
+import Breadcrumb from '../components/breadcum/breadcrumb'
 
 
 const AllTrainingPayments = () => {
-    const titles = [
-        "New Member Payment",
-        "Renewal Payment",
-        "Renewal Payment With Late Fee",
-        "All Training Payments",
-        "Meeting Payment"
-    ];
 
-    const links = [
-        "new-member-payment",
-        "renewal-payment",
-        "renewal-payment-with-late-fee",
-        "all-training-payments",
-        "meeting-payment"
-    ];
-    
-
+const link="all-training-payments"
 
   return (
     
     
-    <>
+    <div >
       <Navbar />
-    
-    {/* <PaymentButtons titles={titles} links={links} /> */}
+    <Breadcrumb link={link}/>
+    <AllPaymentsForm/>
     
     <Footer />
-    </>
+    <Copyright/>
+    </div>
   )
 }
 

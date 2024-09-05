@@ -2,34 +2,21 @@ import React from 'react'
 import Navbar from '../components/navbar/navbar'
 import PaymentButtons from '../components/paymentButtons/paymentButtons'
 import Footer from '../components/footer/footer'
-
+import Copyright from '../components/footer/copyright'
+import Breadcrumb from '../components/breadcum/breadcrumb'
 const MemberApplication = () => {
-    const titles = [
-        "New Member Payment",
-        "Renewal Payment",
-        "Renewal Payment With Late Fee",
-        "All Training Payments",
-        "Meeting Payment"
-    ];
-
-    const links = [
-        "new-member-payment",
-        "renewal-payment",
-        "renewal-payment-with-late-fee",
-        "all-training-payments",
-        "meeting-payment"
-    ];
-    
-
+  const link="member-application"
+  
 
   return (
     
     
     <>
       <Navbar />
-    {/* <PaymentButtons titles={titles} links={links} /> */}
-    <div>MemberApplication</div>
+      <Breadcrumb link={link}/>
+    
     <Footer />
+    <Copyright/>
     </>
   )
 }

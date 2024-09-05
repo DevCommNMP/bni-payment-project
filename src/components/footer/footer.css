@@ -6,10 +6,10 @@
 	width: 100%;
 	text-align: left;
 	font-family: "Poppins", sans-serif;
-	font-size: 12px;
-	border-top: 1px solid rgb(204, 204, 204);
+
 	font-weight:500;
 	padding: 55px 50px;
+	
 }
 
 .footer-distributed .footer-left,
@@ -172,6 +172,22 @@
 .footer-links a:hover{
     color:#d12031;
 }
+
+.coryright-container{
+width: 100%;
+height: 30px;
+padding: 5px;
+background-color:#cf202f ;
+	
+}
+.copyright-content{
+	font-weight: bold;
+text-align: center;
+color: White;
+font-size: 10px;
+	
+}
+
 
 /* If you don't want the footer to be responsive, remove these media queries */
 

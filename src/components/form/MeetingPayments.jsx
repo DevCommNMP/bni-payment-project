@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './form.css';
 import border from "../../assets/images/form icons/border.png"
+import Navbar from '../navbar/navbar';
 
-const BNIPaymentForm = () => {
+const MeetingPaymentsForm = () => {
   const [formData, setFormData] = useState({
     region: '',
     chapter: '',
@@ -14,7 +15,8 @@ const BNIPaymentForm = () => {
     address: '',
     company: '',
     gstin: '',
-    paymentType: ''
+    paymentType: '',
+    trainingProgram:''
   });
 
   const [errors, setErrors] = useState({});
@@ -39,6 +41,7 @@ const BNIPaymentForm = () => {
     if (!formData.address) errors.address = 'Address is required';
     if (!formData.company) errors.company = 'Company is required';
     if (!formData.paymentType) errors.paymentType = 'Payment Type is required';
+    if(!formData.trainingProgram) errors.trainingProgram='Training Program is required'
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -51,9 +54,13 @@ const BNIPaymentForm = () => {
   };
 
   return (
+    <>
+   
+    
     <div className="form-container">
+        
     <div className="form-header">
-      <h1>BNI NEW MEMBER PAYMENT</h1>
+      <h1>MEETING PAYMENT</h1>
       <img src={border} alt="" style={{ width: "250px" }} />
     </div>
     <div className="box-container">
@@ -195,7 +202,22 @@ const BNIPaymentForm = () => {
             />
             {errors.category && <small className="error-text">{errors.category}</small>}
           </div>
-  
+          <div className="form-group">
+            <label htmlFor="trainingProgram">Training Program :</label>
+            <select
+              id="trainingProgram"
+              name="trainingProgram"
+              value={formData.trainingProgram}
+              onChange={handleChange}
+              className={errors.trainingProgram ? 'error' : ''}
+            >
+              <option value="">Select Training Program</option>
+              <option value="Program 1">Program 1</option>
+              <option value="Program 2">Program 2</option>
+            </select>
+            {errors.trainingProgram && <small className="error-text">{errors.trainingProgram}</small>}
+          </div>
+      
           <div className="form-group">
             <label htmlFor="address">Address :</label>
             <input
@@ -220,7 +242,7 @@ const BNIPaymentForm = () => {
               value={formData.gstin}
               onChange={handleChange}
             />
-            <p style={{ fontSize: "12px",color:'red' }}>
+            <p style={{ fontSize: "12px",color:"red" }}>
               *Please fill 'null' if you don't have GST Number
             </p>
           </div>
@@ -251,10 +273,11 @@ const BNIPaymentForm = () => {
       <p><span style={{ color: "red" }}>NOTE:</span> All the payment done on this page will directly go through the HDFC payment gateway.</p>
     </div>
   
-
+ 
   </div>
+  </>
   
   );
 };
 
-export default BNIPaymentForm;
+export default MeetingPaymentsForm;

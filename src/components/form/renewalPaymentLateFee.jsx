@@ -1,62 +1,64 @@
 import React, { useState } from 'react'
 import './form.css';
+import border from "../../assets/images/form icons/border.png"
+
 export const RenewalPaymentLateFee = () => {
-    const [formData, setFormData] = useState({
-        region: '',
-        chapter: '',
-        memberName: '',
-        email: '',
-        renewalYear: '',
-        category: '',
-        mobileNumber: '',
-        address: '',
-        company: '',
-        gstin: '',
-        paymentType: '',
-        gstin: ''
-      });
-    
-      const [errors, setErrors] = useState({});
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value
-        });
-      };
-    
-      const validate = () => {
-        const errors = {};
-        if (!formData.region) errors.region = 'BNI Region is required';
-        if (!formData.chapter) errors.chapter = 'BNI Chapter is required';
-        if (!formData.memberName) errors.memberName = 'Member Name is required';
-        if (!formData.email) errors.email = 'Email is required';
-        if (!formData.renewalYear) errors.renewalYear = 'Renewal Year is required';
-        if (!formData.category) errors.category = 'Category is required';
-        if (!formData.mobileNumber) errors.mobileNumber = 'Mobile Number is required';
-        if (!formData.address) errors.address = 'Address is required';
-        if (!formData.company) errors.company = 'Company is required';
-        if (!formData.paymentType) errors.paymentType = 'Payment Type is required';
-        setErrors(errors);
-        return Object.keys(errors).length === 0;
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        if (validate()) {
-          alert('Form submitted successfully!');
-        }
-      };
+  const [formData, setFormData] = useState({
+    region: '',
+    chapter: '',
+    memberName: '',
+    email: '',
+    renewalYear: '',
+    category: '',
+    mobileNumber: '',
+    address: '',
+    company: '',
+    gstin: '',
+    paymentType: ''
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const validate = () => {
+    const errors = {};
+    if (!formData.region) errors.region = 'BNI Region is required';
+    if (!formData.chapter) errors.chapter = 'BNI Chapter is required';
+    if (!formData.memberName) errors.memberName = 'Member Name is required';
+    if (!formData.email) errors.email = 'Email is required';
+    if (!formData.renewalYear) errors.renewalYear = 'Renewal Year is required';
+    if (!formData.category) errors.category = 'Category is required';
+    if (!formData.mobileNumber) errors.mobileNumber = 'Mobile Number is required';
+    if (!formData.address) errors.address = 'Address is required';
+    if (!formData.company) errors.company = 'Company is required';
+    if (!formData.paymentType) errors.paymentType = 'Payment Type is required';
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      alert('Form submitted successfully!');
+    }
+  };
+
     
       return (
-            
         <div className="form-container">
-          <div className="form-header">
-            <h1>RENEWAL PAYMENT WITH LATE FEE</h1>
-          </div>
-    <div style={{display:'flex',flexDirection:'row',justifyContent:"space-around"}}>
-    <form className="form-content" onSubmit={handleSubmit}>
+        <div className="form-header">
+          <h1>MEMBER RENEWAL PAYMENT WITH LATE FEE</h1>
+          <img src={border} alt="" style={{ width: "250px" }} />
+        </div>
+        <div className='box-container'>
+          <form className="form-content" onSubmit={handleSubmit}>
             <div className="form-left">
               <div className="form-group">
                 <label htmlFor="region">BNI Region :</label>
@@ -67,27 +69,27 @@ export const RenewalPaymentLateFee = () => {
                   onChange={handleChange}
                   className={errors.region ? 'error' : ''}
                 >
-                  <option value="">Choose Region</option>
+                  <option value="">Select Region</option>
                   <option value="Region 1">Region 1</option>
                   <option value="Region 2">Region 2</option>
                 </select>
                 {errors.region && <small className="error-text">{errors.region}</small>}
               </div>
-    
+      
               <div className="form-group">
                 <label htmlFor="memberName">Member Name :</label>
                 <input
                   type="text"
                   id="memberName"
                   name="memberName"
-                  placeholder='Enter Member Name'
                   value={formData.memberName}
                   onChange={handleChange}
                   className={errors.memberName ? 'error' : ''}
+                  placeholder="Enter Member Name"
                 />
                 {errors.memberName && <small className="error-text">{errors.memberName}</small>}
               </div>
-    
+      
               <div className="form-group">
                 <label htmlFor="renewalYear">Renewal Year :</label>
                 <select
@@ -103,21 +105,21 @@ export const RenewalPaymentLateFee = () => {
                 </select>
                 {errors.renewalYear && <small className="error-text">{errors.renewalYear}</small>}
               </div>
-    
+      
               <div className="form-group">
                 <label htmlFor="mobileNumber">Mobile Number :</label>
                 <input
                   type="text"
                   id="mobileNumber"
-                  placeholder='Enter Mobile No.'
                   name="mobileNumber"
                   value={formData.mobileNumber}
                   onChange={handleChange}
                   className={errors.mobileNumber ? 'error' : ''}
+                  placeholder="Enter Mobile Number"
                 />
                 {errors.mobileNumber && <small className="error-text">{errors.mobileNumber}</small>}
               </div>
-    
+      
               <div className="form-group">
                 <label htmlFor="company">Company :</label>
                 <input
@@ -127,10 +129,11 @@ export const RenewalPaymentLateFee = () => {
                   value={formData.company}
                   onChange={handleChange}
                   className={errors.company ? 'error' : ''}
+                  placeholder="Enter Company Name"
                 />
                 {errors.company && <small className="error-text">{errors.company}</small>}
               </div>
-    
+      
               <div className="form-group">
                 <label htmlFor="paymentType">Payment Type :</label>
                 <select
@@ -148,7 +151,7 @@ export const RenewalPaymentLateFee = () => {
                 {errors.paymentType && <small className="error-text">{errors.paymentType}</small>}
               </div>
             </div>
-    
+      
             <div className="form-right">
               <div className="form-group">
                 <label htmlFor="chapter">BNI Chapter :</label>
@@ -165,83 +168,92 @@ export const RenewalPaymentLateFee = () => {
                 </select>
                 {errors.chapter && <small className="error-text">{errors.chapter}</small>}
               </div>
-    
+      
               <div className="form-group">
                 <label htmlFor="email">Email :</label>
                 <input
                   type="email"
                   id="email"
-                  placeholder='Enter Member Email'
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   className={errors.email ? 'error' : ''}
+                  placeholder="Enter Email"
                 />
                 {errors.email && <small className="error-text">{errors.email}</small>}
               </div>
-    
+      
               <div className="form-group">
                 <label htmlFor="category">Category :</label>
                 <input
                   type="text"
                   id="category"
-                  placeholder='Enter Member Category'
                   name="category"
                   value={formData.category}
                   onChange={handleChange}
                   className={errors.category ? 'error' : ''}
+                  placeholder="Enter Category"
                 />
                 {errors.category && <small className="error-text">{errors.category}</small>}
               </div>
-    
+      
               <div className="form-group">
                 <label htmlFor="address">Address :</label>
                 <input
                   type="text"
                   id="address"
-                  placeholder='Enter Member Address'
                   name="address"
                   value={formData.address}
                   onChange={handleChange}
                   className={errors.address ? 'error' : ''}
+                  placeholder="Enter Address"
                 />
                 {errors.address && <small className="error-text">{errors.address}</small>}
               </div>
-    
+      
               <div className="form-group">
                 <label htmlFor="gstin">GSTIN No. :</label>
                 <input
                   type="text"
                   id="gstin"
-                  placeholder='Enter Member GSTIN'
                   name="gstin"
                   value={formData.gstin}
                   onChange={handleChange}
+                  placeholder="Enter GSTIN No."
                 />
+                <p style={{ fontSize: "12px",color:'red' }}>*Please fill null if you don't have GST Number</p>
               </div>
             </div>
-     
           </form>
-    <div className="summary-container">
-              <div className="summary">
-                <p>Total Amount: ₹1001</p>
-                <p>Late Fee: ₹0</p>
-                <p>GST: ₹50</p>
-                <p className="total">Total Amount (Including GST): ₹1051</p>
+      
+          <div className="summary-container">
+            <div className="summary">
+              <h5 className="summary-heading">Summary</h5>
+              <hr style={{ borderBottom: "1px solid rgb(204, 204, 204)", marginTop: "-5px" }} />
+              <div className="summary-content">
+                <p><span style={{ fontWeight: "bold", fontSize: "14px" }}>Total Amount:</span> <span>₹1001</span></p>
+                <p><span style={{ fontWeight: "bold", fontSize: "14px" }}>Late Fee:</span> <span>₹0</span></p>
+                <p><span style={{ fontWeight: "bold", fontSize: "14px" }}>GST:</span> <span>₹50</span></p>
               </div>
-              <button type="submit" className="pay-now-button">PAY NOW</button>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", flexDirection: "column", }}>
+                  <span className="total">Total Amount</span>
+                  <span>(Including GST:)</span>
+                </div>
+                <p>₹1051</p>
+              </div>
             </div>
-    </div>
-          
-    
-          <div className="form-note">
-            <p><span style={{color:'red'}}>NOTE</span>: All the payment done on this page will directly go through the HDFC payment gateway.</p>
-          </div>
-    
-          <div className="form-footer">
-            <p>© 2024 BNI All Right Reserved</p>
+            <button className="pay-now-button" onClick={handleSubmit}>PAY NOW</button>
           </div>
         </div>
+      
+        <div className="form-note">
+          <p><span style={{ color: "red" }}>NOTE:</span> All the payment done on this page will directly go through the HDFC payment gateway.</p>
+        </div>
+      
+      
+      </div>
+      
       );
 }
 export default RenewalPaymentLateFee;

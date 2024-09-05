@@ -5,12 +5,16 @@
     flex-direction: row;
     justify-content: space-around;
     margin-top: 40px;
+    
+    
 }
 .form-container {
     max-width: 100%;
     margin: 20px auto;
     background-color: white;
     padding: 20px;
+    background-color: white;  
+    
   
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }

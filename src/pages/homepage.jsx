@@ -3,6 +3,7 @@ import Navbar from '../components/navbar/navbar';
 import PaymentButtons from '../components/paymentButtons/paymentButtons';
 import HomepageMainBanner from '../components/paymentButtons/banners/homepageBanner/homepageMainBanner';
 import Footer from '../components/footer/footer';
+import Copyright from '../components/footer/copyright';
 
 const Homepage = () => {
     const titles = [
@@ -28,6 +29,7 @@ const Homepage = () => {
             <PaymentButtons titles={titles} links={links} />
             <HomepageMainBanner />
             <Footer />
+            <Copyright/>
         </>
     );
 }
