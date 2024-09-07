@@ -7,9 +7,8 @@ import Copyright from '../components/footer/copyright'
 import Breadcrumb from '../components/breadcum/breadcrumb'
 
 const RenewalPayment = () => {
-   
   const link="renewal-payment"
-
+ 
   return (
     
     

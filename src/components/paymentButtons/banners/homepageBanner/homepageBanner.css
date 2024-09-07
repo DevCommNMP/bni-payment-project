@@ -1,7 +1,7 @@
 .banner-container {
     display: flex;
-    margin-top: 0px auto;
-    height: 80vh;
+    margin-top: -60px ;
+    height: 86vh;
     background-image: url("../../../../assets/images/banners/homepage-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -36,7 +36,7 @@
 .link-buttons {
     display: flex;
     flex-direction: row;
-
+ 
     justify-content: flex-start;
 }
 
@@ -44,12 +44,15 @@
     background-color: #d12031;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 5px;
     /* Added padding for better button appearance */
-    font-size: 14px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px  rgb(36, 34, 34);    ;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     /* Added transition for smooth animation */
+    font-weight: 700;
     margin: 5px;
 }
 
